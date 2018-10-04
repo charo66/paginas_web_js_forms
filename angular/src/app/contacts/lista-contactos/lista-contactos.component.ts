@@ -9,15 +9,18 @@ import { USERS } from '../../datos/contactos.mock';
 })
 export class ListaContactosComponent implements OnInit {
 
-  aContactos:Array<ContactoIf>
+  aContactos: Array<ContactoIf>
 
   constructor() { }
 
   ngOnInit() {
-    this.aContactos=USERS
+    this.aContactos = USERS
   }
-borrarContacto(id){
-  console.log('evento recibido')
-  console.dir('id')
-}
+
+  borrarContacto(badEmail) {
+    
+  this.aContactos = this.aContactos.filter(
+      (item) => item.email != badEmail )
+  }
+
 }
